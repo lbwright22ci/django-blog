@@ -1,10 +1,13 @@
 from django.contrib import admin
-from .models import About, CollaborateRequest
 from django_summernote.admin import SummernoteModelAdmin
+from .models import About, CollaborateRequest
 
 # Register your models here.
 @admin.register(About)
 class PostAdmin(SummernoteModelAdmin):
+    """
+    Loads summernote editor to allow superuser to enter or edit the 'content' section of :model:`about.About`
+    """
     summernote_fields = ('content',)
 
 # Note: admin.ModelAdmin is the standard way of registering
@@ -16,5 +19,8 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(CollaborateRequest)
 class CollaborateRequestAdmin(admin.ModelAdmin):
-
+    """
+    Makes submissions of :form:`about.CollaborateForm` visible to superUser in the admin pannel
+    User can update :model:`about.CollaborateRequest.read` field
+    """
     list_display = ('message', 'read',)
