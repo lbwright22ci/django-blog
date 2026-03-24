@@ -3,7 +3,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class About(models.Model):
-        """
+    """
     Stores a single 'About Me' entry related.
     """
     title = models.CharField(max_length=200, unique=True)
@@ -14,7 +14,7 @@ class About(models.Model):
         return f"{self.title}"
     
 class CollaborateRequest(models.Model):
-        """
+    """
     Stores a single collaborate Request form submission entry.
     """
     name = models.CharField(max_length=200)

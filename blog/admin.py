@@ -20,6 +20,6 @@ class PostAdmin(SummernoteModelAdmin):
 # Register your models here.
 
 admin.site.register(Comment)
-    """
+"""
     Renders all instances of :model:`blog.Comment` in the Admin panel
-    """
+"""
